@@ -1,0 +1,672 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/29/2026 6:42:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ADVSQL"
+  DTS:CreatorName="ADVSQL\SQL"
+  DTS:DTSID="{21218174-DDB1-4B95-9C86-16C37BCA68EC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TableDataExport"
+  DTS:PackageType="5"
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{44849585-C950-4582-98AD-1843140CC6DF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0076C5F8-6E52-44C8-BC76-D844B9E1EB38}"
+      DTS:ObjectName="ADVSQL.AdventureWorks2019.sa">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source=" +  @[User::DatabaseServer] + ";Initial Catalog=" +  @[User::DatabaseName] + ";Integrated Security=SSPI;Auto Translate=False"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ADVSQL;Initial Catalog=AdventureWorks2019;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SalesPersonTableExport]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Exports a current snapshot of the SalesPerson table"
+      DTS:DTSID="{09CE5C8A-4DD5-4D90-AFA0-A1B6AA7D867C}"
+      DTS:ObjectName="SalesPersonTableExport">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::FilePath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x002C_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\SQL\Desktop\FinalProjectTableExport\SalesPersonTableExport.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BusinessEntityID"
+              DTS:DTSID="{D531A1C3-1082-47F9-8B73-B35999385E39}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TerritoryID"
+              DTS:DTSID="{52006494-A40C-419A-BFDC-73FC073DA1CB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesQuota"
+              DTS:DTSID="{7A4F60AE-3040-4B33-9BC9-520660E5C1A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Bonus"
+              DTS:DTSID="{1F5281D0-957E-48B9-92F4-43980D23BFDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommissionPct"
+              DTS:DTSID="{5A6655AB-2668-4DB7-8971-16D56FDC5A15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesYTD"
+              DTS:DTSID="{628EEEFA-6FA1-494C-A21F-06315C568E62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesLastYear"
+              DTS:DTSID="{5BAE9BFA-359C-46C3-90C8-C707B19A4854}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="72"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rowguid"
+              DTS:DTSID="{B8123A9D-605B-44A6-981C-55E555ED2B65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ModifiedDate"
+              DTS:DTSID="{D9D8818C-7F54-4C28-87D9-4A46CA734B28}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0B4E3045-705C-4DF5-B982-29366DFF859D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DatabaseName">
+      <DTS:VariableValue
+        DTS:DataType="8">AdventureWorks2019</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D0661A86-0959-4FDB-8563-4B6FC6AB508F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DatabaseServer">
+      <DTS:VariableValue
+        DTS:DataType="8">ADVSQL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FA2CFCE0-14D3-4DC7-9BFA-670E2E95D375}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\SQL\Desktop\FinalProjectTableExport\SalesPersonTableExport.csv</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export Table Data"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8A1B7743-B9A5-454D-B16E-759407F43D03}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export Table Data"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export Table Data\AdventureWorks2019 DB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="AdventureWorks2019 DB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Sales].[SalesPerson]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable">User::_ConnAdventureWorks</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Table Data\AdventureWorks2019 DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[ADVSQL.AdventureWorks2019.sa]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[BusinessEntityID]"
+                      name="BusinessEntityID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[TerritoryID]"
+                      name="TerritoryID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesQuota]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesQuota]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesQuota]"
+                      name="SalesQuota"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[Bonus]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[Bonus]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[Bonus]"
+                      name="Bonus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[CommissionPct]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[CommissionPct]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[CommissionPct]"
+                      name="CommissionPct"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesYTD]"
+                      name="SalesYTD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesLastYear]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesLastYear]"
+                      name="SalesLastYear"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[rowguid]"
+                      name="rowguid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                      name="ModifiedDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesQuota]"
+                      dataType="cy"
+                      name="SalesQuota" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[Bonus]"
+                      dataType="cy"
+                      name="Bonus" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[CommissionPct]"
+                      dataType="cy"
+                      name="CommissionPct" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesYTD]"
+                      dataType="cy"
+                      name="SalesYTD" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[SalesLastYear]"
+                      dataType="cy"
+                      name="SalesLastYear" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                      dataType="i4"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[BusinessEntityID]"
+                      name="BusinessEntityID" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      dataType="i4"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[TerritoryID]"
+                      name="TerritoryID" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesQuota]"
+                      dataType="cy"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesQuota]"
+                      name="SalesQuota" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[Bonus]"
+                      dataType="cy"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[Bonus]"
+                      name="Bonus" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[CommissionPct]"
+                      dataType="cy"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[CommissionPct]"
+                      name="CommissionPct" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      dataType="cy"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesYTD]"
+                      name="SalesYTD" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesLastYear]"
+                      dataType="cy"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[SalesLastYear]"
+                      name="SalesLastYear" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      dataType="guid"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[rowguid]"
+                      name="rowguid" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                      name="ModifiedDate" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Table Data\SalesPerson Table Export to CSV"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="SalesPerson Table Export to CSV"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Table Data\SalesPerson Table Export to CSV.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SalesPersonTableExport]"
+                  connectionManagerRefId="Package.ConnectionManagers[SalesPersonTableExport]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[BusinessEntityID]"
+                      cachedDataType="i4"
+                      cachedName="BusinessEntityID"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[BusinessEntityID]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[BusinessEntityID]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[TerritoryID]"
+                      cachedDataType="i4"
+                      cachedName="TerritoryID"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[TerritoryID]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[TerritoryID]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[SalesQuota]"
+                      cachedDataType="cy"
+                      cachedName="SalesQuota"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesQuota]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesQuota]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[Bonus]"
+                      cachedDataType="cy"
+                      cachedName="Bonus"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[Bonus]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[Bonus]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[CommissionPct]"
+                      cachedDataType="cy"
+                      cachedName="CommissionPct"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[CommissionPct]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[CommissionPct]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[SalesYTD]"
+                      cachedDataType="cy"
+                      cachedName="SalesYTD"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesYTD]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesYTD]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[SalesLastYear]"
+                      cachedDataType="cy"
+                      cachedName="SalesLastYear"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesLastYear]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[SalesLastYear]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[rowguid]"
+                      cachedDataType="guid"
+                      cachedName="rowguid"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[rowguid]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[rowguid]" />
+                    <inputColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].Columns[ModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ModifiedDate"
+                      externalMetadataColumnId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[ModifiedDate]"
+                      lineageId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[BusinessEntityID]"
+                      dataType="i4"
+                      name="BusinessEntityID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[TerritoryID]"
+                      dataType="i4"
+                      name="TerritoryID" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesQuota]"
+                      dataType="cy"
+                      name="SalesQuota" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[Bonus]"
+                      dataType="cy"
+                      name="Bonus" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[CommissionPct]"
+                      dataType="cy"
+                      name="CommissionPct" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesYTD]"
+                      dataType="cy"
+                      name="SalesYTD" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[SalesLastYear]"
+                      dataType="cy"
+                      name="SalesLastYear" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[rowguid]"
+                      dataType="guid"
+                      name="rowguid" />
+                    <externalMetadataColumn
+                      refId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input].ExternalColumns[ModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="ModifiedDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export Table Data.Paths[OLE DB Source Output]"
+              endId="Package\Export Table Data\SalesPerson Table Export to CSV.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export Table Data\AdventureWorks2019 DB.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Export Table Data"
+          TopLeft="225,181" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Export Table Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Export Table Data\AdventureWorks2019 DB"
+          TopLeft="483,241" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Export Table Data\SalesPerson Table Export to CSV"
+          TopLeft="482,418" />
+        <EdgeLayout
+          Id="Package\Export Table Data.Paths[OLE DB Source Output]"
+          TopLeft="584.5,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,135"
+              Start="0,0"
+              End="19.5,127.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,63.5"
+                    Point2="0,67.5"
+                    Point3="4,67.5" />
+                  <mssgle:LineSegment
+                    End="15.5,67.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,67.5"
+                    Point2="19.5,67.5"
+                    Point3="19.5,71.5" />
+                  <mssgle:LineSegment
+                    End="19.5,127.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Establishes a connection to the AdventureWorks2019 database"
+          ParentId="Package\Export Table Data"
+          FontInfo="{assembly:Null}"
+          Size="361,60"
+          Id="50efe29e-3a26-40cc-a30c-9d85d824af97"
+          TopLeft="695,243" />
+        <AnnotationLayout
+          Text="This Flat File Destination will attempt to export the SalesPerson table data to &#xD;&#xA;a CSV file located in a folder on the Desktop. &#xD;&#xA;&#xD;&#xA;Values are delimited by commas. Headers are included in the first row,&#xD;&#xA;also seperated by commas.&#xD;&#xA;&#xD;&#xA;File will be created if it does not already exist."
+          ParentId="Package\Export Table Data"
+          FontInfo="{assembly:Null}"
+          Size="435,136"
+          Id="fb7d67ba-7c27-4a28-8afa-dcf55e23b0c3"
+          TopLeft="727,419" />
+        <AnnotationLayout
+          Text="Three variables are present: DatabaseServer, DatabaseName, and FilePath&#xA;&#xA;Both of the connection managers have expressions that are tied to&#xA;these variables, allowing for an easier time updating values where needed"
+          ParentId="Package\Export Table Data"
+          FontInfo="{assembly:Null}"
+          Size="419,88"
+          Id="77a9e63d-36cb-4292-99ac-98dfa69ad3df"
+          TopLeft="699,119" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export Table Data\AdventureWorks2019 DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
