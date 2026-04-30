@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SQL\\source\\repos\\Week5-SSISImport\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{028BA5A4-BF5F-09DE-5417-C7DC8436B2E1}|Week5-SSISImport.dtproj|C:\\Users\\SQL\\source\\repos\\Week5-SSISImport\\TableDataImport.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{028BA5A4-BF5F-09DE-5417-C7DC8436B2E1}|Week5-SSISImport.dtproj|solutionrelative:TableDataImport.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TableDataImport.dtsx [Design]",
+              "DocumentMoniker": "C:\\Users\\SQL\\source\\repos\\Week5-SSISImport\\TableDataImport.dtsx",
+              "RelativeDocumentMoniker": "TableDataImport.dtsx",
+              "ToolTip": "C:\\Users\\SQL\\source\\repos\\Week5-SSISImport\\TableDataImport.dtsx [Design]",
+              "RelativeToolTip": "TableDataImport.dtsx [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-30T07:20:59.17Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

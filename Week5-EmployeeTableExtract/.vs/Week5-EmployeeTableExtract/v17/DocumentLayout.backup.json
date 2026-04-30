@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SQL\\source\\repos\\Week5-EmployeeTableExtract\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{42FBFF24-1903-C06F-1697-E955D370BE38}|Week5-EmployeeTableExtract.dtproj|C:\\Users\\SQL\\source\\repos\\Week5-EmployeeTableExtract\\EmployeeTableExtract.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{42FBFF24-1903-C06F-1697-E955D370BE38}|Week5-EmployeeTableExtract.dtproj|solutionrelative:EmployeeTableExtract.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeTableExtract.dtsx [Design]",
+              "DocumentMoniker": "C:\\Users\\SQL\\source\\repos\\Week5-EmployeeTableExtract\\EmployeeTableExtract.dtsx",
+              "RelativeDocumentMoniker": "EmployeeTableExtract.dtsx",
+              "ToolTip": "C:\\Users\\SQL\\source\\repos\\Week5-EmployeeTableExtract\\EmployeeTableExtract.dtsx [Design]",
+              "RelativeToolTip": "EmployeeTableExtract.dtsx [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-04-30T04:15:13.956Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
