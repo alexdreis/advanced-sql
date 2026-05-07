@@ -1,0 +1,36 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SQL\\source\\repos\\InvoiceDrillDown\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{17F52C10-E302-7E3E-4F9C-913389C17292}|InvoiceDrillDown\\InvoiceDrillDown.rptproj|C:\\Users\\SQL\\source\\repos\\InvoiceDrillDown\\InvoiceDrillDown\\Invoice Table Date Report.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}",
+      "RelativeMoniker": "D:0:0:{17F52C10-E302-7E3E-4F9C-913389C17292}|InvoiceDrillDown\\InvoiceDrillDown.rptproj|solutionrelative:InvoiceDrillDown\\Invoice Table Date Report.rdl||{420F4200-DD61-4785-81F3-52669CBC208E}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Invoice Table Date Report.rdl [Design]",
+              "DocumentMoniker": "C:\\Users\\SQL\\source\\repos\\InvoiceDrillDown\\InvoiceDrillDown\\Invoice Table Date Report.rdl",
+              "RelativeDocumentMoniker": "InvoiceDrillDown\\Invoice Table Date Report.rdl",
+              "ToolTip": "C:\\Users\\SQL\\source\\repos\\InvoiceDrillDown\\InvoiceDrillDown\\Invoice Table Date Report.rdl [Design]",
+              "RelativeToolTip": "InvoiceDrillDown\\Invoice Table Date Report.rdl [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-07T03:44:17.274Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
